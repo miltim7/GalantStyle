@@ -1,7 +1,7 @@
 header {
     background-color: var(--nav-background);
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -11,7 +11,6 @@ header {
 
 header .container {
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -31,18 +30,46 @@ nav ul {
 }
 
 nav li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav a {
-    color: #fff;
+    position: relative;
+    display: inline-block;
+    color: var(--background-color);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
+    font-size: 20px;
+    letter-spacing: .8px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--background-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #b0b1ce;
+    transition: .2s ease;
+}
+
+header img {
+    height: 55px;
+}
+
+.logo-link {
+    padding: 0;
 }
 
 .language-switcher {

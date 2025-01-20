@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import '../../styles/products.css';
+import '../../styles/global.css'
 import Header from '../components/Header';
 
 const clothesCategories = ["Все","Футболки","Брюки","Обувь","Джемпер","Рубашки","Носки"];
@@ -111,7 +112,7 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main style={{ marginTop: '100px' }}>
+      <main>
         <div style={{ marginLeft: '50px', marginRight: '50px' }}>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
             <select
