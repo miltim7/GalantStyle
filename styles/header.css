@@ -1,5 +1,4 @@
 header {
-    background-color: var(--nav-background);
     color: #fff;
     padding: 10px 0;
     position: fixed;
@@ -7,6 +6,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    background-color: #0000004e !important;
 }
 
 header .container {
@@ -114,6 +114,12 @@ header img {
 }
 
 @media (max-width: 768px) {
+    header {
+        border-width: 0 0 1px 0;
+        border-color: #fff;
+        border-style: solid;
+    }
+
     nav ul {
         flex-direction: column;
         background-color: var(--nav-background);
@@ -121,8 +127,8 @@ header img {
         top: 0;
         right: 0;
         height: 100vh;
-        width: 250px;
-        padding: 60px 20px 0 20px;
+        width: 100%;
+        padding: 60px 0px 0 0px;
         border-radius: 0;
         transform: translateX(100%);
         opacity: 0;
@@ -134,11 +140,33 @@ header img {
         transform: translateX(0);
         opacity: 1;
         pointer-events: auto;
+        text-align: center;
     }
 
     nav li {
-        margin: 20px 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+    }
+
+    nav li:nth-child(1) {
+        margin-top: 20px;
+    }
+
+    nav li a {
+        height: 100%;
+        width: 100%;
+        padding: 20px 0;
+
+        border-width: .5px 0 .5px 0;
+        border-color: #cacacac0;
+        border-style: solid;
+    }
+
+    nav a:hover::after {
+        width: 0;
     }
 
     .burger {
@@ -155,11 +183,5 @@ header img {
 
     .burger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .language-switcher {
-        position: absolute;
-        top: 20px;
-        right: 50px;
     }
 }

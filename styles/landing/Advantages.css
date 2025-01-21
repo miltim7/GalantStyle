@@ -1,0 +1,76 @@
+.advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.advantages .title {
+    font-size: 52px;
+    font-weight: bold;
+    color: var(--nav-background);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.advantages .logo {
+    margin-bottom: 40px;
+    width: 200px;
+}
+
+.advantages .advantages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+.advantages .advantage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.advantages .icon {
+    font-size: 50px;
+    color: var(--accent-color);
+}
+
+.advantages .text {
+    font-size: 28px;
+    color: var(--nav-background);
+}
+
+@media (max-width: 1024px) {
+    .advantages .title {
+        font-size: 42px;
+    }
+
+    .advantages .icon {
+        font-size: 40px;
+    }
+
+    .advantages .text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .advantages .advantages-list {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages .title {
+        font-size: 48px;
+    }
+
+    .advantages .icon {
+        font-size: 35px;
+    }
+
+    .advantages .text {
+        font-size: 20px;
+    }
+}

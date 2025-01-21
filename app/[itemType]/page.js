@@ -111,8 +111,8 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Header />
-      <main>
+      <Header/>
+      <main style={{marginTop: '90px'}}>
         <div style={{ marginLeft: '50px', marginRight: '50px' }}>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
             <select
