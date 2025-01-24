@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Футболка 1",
+        "price": "500 $",
+        "description": "Классическая футболка из хлопка.",
+        "type": "Футболки",
+        "details": {
+            "fullDescription": "Лёгкая футболка, удобная для повседневной носки.",
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "colors": [
+                "Белый",
+                "Черный"
+            ],
+            "material": "Хлопок 100%",
+            "images": [
+                "/assets/clothes/product1.webp"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "name": "Чехол для телефона 3",
+        "price": "140 $",
+        "description": "Чехол-книжка с кармашками.",
+        "type": "Чехлы для телефонов",
+        "details": {
+            "fullDescription": "Защищает и экран, можно хранить пару банковских карт.",
+            "colors": [
+                "Коричневый",
+                "Чёрный"
+            ],
+            "material": "Искусственная кожа",
+            "images": [
+                "/assets/accessories/product1.webp"
+            ]
+        }
+    },
+    {
+        "id": 37,
+        "name": "Джемпер 7",
+        "price": "2200 $",
+        "description": "Джемпер с воротником на молнии.",
+        "type": "Джемпер",
+        "details": {
+            "fullDescription": "Удобно регулировать глубину горловины.",
+            "sizes": [
+                "M",
+                "L"
+            ],
+            "colors": [
+                "Коричневый"
+            ],
+            "material": "Шерсть 60%, Полиэстер 40%",
+            "images": [
+                "/assets/clothes/product4.webp"
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "name": "Кепка 1",
+        "price": "300 $",
+        "description": "Бейсболка с вышитым логотипом.",
+        "type": "Кепки",
+        "details": {
+            "fullDescription": "Удобная застёжка, универсальный размер.",
+            "colors": [
+                "Синий",
+                "Белый"
+            ],
+            "material": "Хлопок 60%, Полиэстер 40%",
+            "images": [
+                "/assets/accessories/product2.webp"
+            ]
+        }
+    }
+]

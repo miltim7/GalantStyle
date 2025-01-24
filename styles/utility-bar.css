@@ -1,0 +1,73 @@
+.utility-bar {
+    background-color: var(--nav-background);
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.utility-bar div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--background-color);
+    width: 1150px;
+    margin: auto;
+}
+
+.utility-bar p {
+    font-size: 12.5px;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-out-left {
+    opacity: 0;
+    transform: translateX(-25px);
+}
+
+.fade-out-right {
+    opacity: 0;
+    transform: translateX(25px);
+}
+
+.fade-in-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.utility-bar button {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.utility-bar button svg {
+    color: #fff;
+    width: 10px;
+    height: 10px;
+}
+
+.utility-bar button:hover svg {
+    width: 12px;
+}
+
+@media (max-width: 400px) {
+    .utility-bar p {
+        font-size: 11px;
+    }
+}

@@ -17,7 +17,7 @@ export default function Advantages() {
 
   return (
     <section className="advantages" ref={ref}>
-      <div className="title">Почему нужно заказывать у</div>
+      <h2 className="title">Почему нужно заказывать у</h2>
       <img src="../assets/logos/4.png" alt="Logo" className="logo" />
       
       <div className="advantages-list">

@@ -29,8 +29,8 @@
 .hero h1 {
     font-size: 132px;
     color: var(--background-color);
-    font-weight: 300;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, .45);
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
 }
 
 .hero span {

@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-family: 'GFS Didot';
   src: url('/fonts/GFSDidot-Regular.ttf') format('truetype');
+
   background-color: var(--background-color);
 }
 
@@ -24,4 +24,5 @@ body {
   text-decoration: none;
   outline: none;
   scroll-behavior: smooth;
+  border: none;
 }

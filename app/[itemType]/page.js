@@ -5,9 +5,10 @@ import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import '../../styles/products.css';
 import '../../styles/global.css'
 import Header from '../components/Header';
+import UtilityBar from '@components/UtilityBar';
 
-const clothesCategories = ["Все","Футболки","Брюки","Обувь","Джемпер","Рубашки","Носки"];
-const accessoriesCategories = ["Все","Чехлы для телефонов","Кепки","Барсетки","Кошельки"];
+const clothesCategories = ["Все", "Футболки", "Брюки", "Обувь", "Джемпер", "Рубашки", "Носки"];
+const accessoriesCategories = ["Все", "Чехлы для телефонов", "Кепки", "Барсетки", "Кошельки"];
 
 export default function ProductsPage() {
   const itemsPerPage = 20;
@@ -111,8 +112,9 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Header/>
-      <main style={{marginTop: '90px'}}>
+      <UtilityBar />
+      <Header />
+      <main style={{ marginTop: '90px' }}>
         <div style={{ marginLeft: '50px', marginRight: '50px' }}>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
             <select

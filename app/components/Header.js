@@ -1,19 +1,54 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 import '@styles/header.css';
 
 export default function Header() {
   const [menuActive, setMenuActive] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [headerPosition, setHeaderPosition] = useState(40);
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
+    if (!menuActive) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY > lastScrollY && scrollY > 1) {
+        setVisible(false);
+        setHeaderPosition(0);
+      } else if (scrollY < lastScrollY) {
+        setVisible(true);
+
+        if (scrollY > 40) {
+          setHeaderPosition(0);
+        } else {
+          setHeaderPosition(40);
+        }
+      }
+
+      setLastScrollY(scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header>
+    <header style={{ transform: visible ? `translateY(${headerPosition}px)` : 'translateY(-100%)', transition: 'transform 0.3s ease' }}>
       <div className="container">
         <a className="logo-link" href="/">
           <motion.img 

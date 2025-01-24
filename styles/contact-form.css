@@ -1,0 +1,116 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 60%;
+    margin: 40px auto;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.contacts h2 {
+    font-size: 52px;
+    color: var(--nav-background);
+}
+
+.contacts span {
+    font-size: 20px;
+    color: var(--nav-background);
+}
+
+.contacts input,
+.contacts textarea {
+    padding: 18px;
+    color: var(--nav-background);
+    border: 1px solid var(--nav-background);
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--background-color);
+    font-size: 16px;
+}
+
+.contacts input:hover,
+.contacts textarea:hover,
+.contacts input:focus,
+.contacts textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: .3s ease;
+}
+
+.contacts textarea {
+    height: 130px;
+    resize: none;
+}
+
+.contacts button {
+    width: 160px;
+    padding: 15px 20px;
+    background-color: var(--nav-background);
+    color: var(--background-color);
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contacts button:hover {
+    background-color: #1b3b70;
+    transition: .2s ease;
+}
+
+.contacts form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+}
+
+.contacts form div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 25px;
+}
+
+@media (max-width: 1024px) {
+    .contacts h2 {
+        font-size: 40px;
+    }
+
+    .contacts span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts h2 {
+        font-size: 32px;
+    }
+
+    .contacts span {
+        font-size: 16px;
+    }
+
+    .contacts form div {
+        flex-direction: column;
+    }
+
+    .contacts {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .contacts button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
