@@ -1,0 +1,14 @@
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid var(--nav-background);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--nav-background);
+    font-family: 'Montserrat';
+}

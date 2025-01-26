@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --nav-background: #0A1F44;
   --accent-color: #D4AF37;
@@ -11,13 +13,11 @@ html {
 }
 
 body {
-  font-family: 'GFS Didot';
-  src: url('/fonts/GFSDidot-Regular.ttf') format('truetype');
-
   background-color: var(--background-color);
 }
 
 * {
+  font-family: 'Montserrat';
   margin: 0;
   padding: 0;
   box-sizing: border-box;

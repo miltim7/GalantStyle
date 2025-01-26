@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 import '@styles/header.css';
 
-export default function Header() {
+export default function Header({ isTransparent }) {
   const [menuActive, setMenuActive] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -48,7 +48,12 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <header style={{ transform: visible ? `translateY(${headerPosition}px)` : 'translateY(-100%)', transition: 'transform 0.3s ease' }}>
+    <header style={{ 
+        transform: visible ? `translateY(${headerPosition}px)` : 'translateY(-100%)',
+        transition: 'transform 0.3s ease',
+        backgroundColor: isTransparent ? '#0000004e' : 'var(--nav-background)',
+        borderBottom: isTransparent ? 'none' : '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
       <div className="container">
         <a className="logo-link" href="/">
           <motion.img 

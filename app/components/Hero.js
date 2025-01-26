@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import styles from '@styles/landing/Hero.css';
+import styles from '@styles/hero.css';
 
 export default function Hero() {
   return (

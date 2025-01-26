@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
-import '../../styles/products.css';
-import '../../styles/global.css'
-import Header from '../components/Header';
+import Header from '@components/Header';
 import UtilityBar from '@components/UtilityBar';
+import Filters from '@components/Filters';
+import Search from '@components/Search';
+import ProductCards from '@components/ProductCards';
+import Footer from '@components/Footer';
+import '@styles/products.css';
+import '@styles/global.css';
 
 const clothesCategories = ["Все", "Футболки", "Брюки", "Обувь", "Джемпер", "Рубашки", "Носки"];
 const accessoriesCategories = ["Все", "Чехлы для телефонов", "Кепки", "Барсетки", "Кошельки"];
@@ -36,7 +39,6 @@ export default function ProductsPage() {
     }
   }, [itemType]);
 
-  // Обновляем выбранную категорию при смене query или типа
   useEffect(() => {
     setSelectedCategory(catQuery);
   }, [catQuery, itemType]);
@@ -69,7 +71,6 @@ export default function ProductsPage() {
     setFilteredProducts(list);
   }, [search, minPrice, maxPrice, selectedCategory, products]);
 
-  // Обновляем URL при смене параметров фильтра и категории
   useEffect(() => {
     const paramsObj = new URLSearchParams();
     paramsObj.set('page', '1');
@@ -113,109 +114,54 @@ export default function ProductsPage() {
   return (
     <>
       <UtilityBar />
-      <Header />
-      <main style={{ marginTop: '90px' }}>
-        <div style={{ marginLeft: '50px', marginRight: '50px' }}>
-          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-            <select
-              value={itemType}
-              onChange={e => handleItemTypeChange(e.target.value)}
-              style={{ padding: '10px', width: '150px' }}
-            >
-              <option value="clothes">Clothes</option>
-              <option value="accessories">Accessories</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Поиск по названию"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              style={{ padding: '10px', flex: '1' }}
-            />
-            <input
-              type="number"
-              placeholder="Мин. цена"
-              value={minPrice}
-              onChange={e => setMinPrice(e.target.value)}
-              style={{ padding: '10px', width: '100px' }}
-            />
-            <input
-              type="number"
-              placeholder="Макс. цена"
-              value={maxPrice}
-              onChange={e => setMaxPrice(e.target.value)}
-              style={{ padding: '10px', width: '100px' }}
-            />
-          </div>
-          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-            {categories.map(cat => (
+      <Header isTransparent={false} />
+      <main className="main-container">
+        <Filters
+          itemType={itemType}
+          categories={categories}
+          selectedCategory={selectedCategory}
+          handleCategoryChange={handleCategoryChange}
+          handleItemTypeChange={handleItemTypeChange}
+          setCategories={setCategories}
+        />
+        <Search
+          search={search}
+          setSearch={setSearch}
+          minPrice={minPrice}
+          setMinPrice={setMinPrice}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
+        />
+        <ProductCards
+          currentItems={currentItems}
+          itemType={itemType}
+        />
+        {totalPages > 1 && (
+          <div className="pagination">
+            <button className="left-button"
+              onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+              disabled={currentPage === 1}><svg aria-hidden="true" focusable="false" className="icon icon-caret prev" viewBox="0 0 10 6">
+                <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+              </svg></button>
+            {[...Array(totalPages)].map((_, i) => (
               <button
-                key={cat}
-                onClick={() => handleCategoryChange(cat)}
-                style={{
-                  padding: '10px',
-                  backgroundColor: selectedCategory === cat ? '#D4AF37' : '#fff',
-                  border: '1px solid #000',
-                  cursor: 'pointer'
-                }}
+                key={`page-button-${i + 1}`}
+                onClick={() => handlePageChange(i + 1)}
+                className={currentPage === (i + 1) ? 'active' : ''}
               >
-                {cat}
+                {i + 1}
               </button>
             ))}
+            <button
+              onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+              disabled={currentPage === totalPages}
+            ><svg aria-hidden="true" focusable="false" className="icon icon-caret next" viewBox="0 0 10 6">
+                <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+              </svg></button>
           </div>
-          <section className="products">
-            {currentItems.length > 0 ? (
-              currentItems.map((product, idx) => (
-                <div key={`${product.id}-${idx}`} className="product">
-                  <Link href={`/${itemType}/${product.id}`}>
-                    <img
-                      src={product.details?.images?.[0] || ''}
-                      alt={product.name}
-                      onLoad={e => e.target.classList.add('loaded')}
-                      style={{ cursor: 'pointer' }}
-                    />
-                  </Link>
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
-                  <button>Купить за {product.price}</button>
-                </div>
-              ))
-            ) : (
-              <p>Ничего не найдено</p>
-            )}
-          </section>
-          {totalPages > 1 && (
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
-              <button
-                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                disabled={currentPage === 1}
-                style={{ marginRight: '10px' }}
-              >
-                Предыдущая
-              </button>
-              {[...Array(totalPages)].map((_, i) => (
-                <button
-                  key={`page-button-${i + 1}`}
-                  onClick={() => handlePageChange(i + 1)}
-                  style={{
-                    margin: '0 5px',
-                    fontWeight: currentPage === (i + 1) ? 'bold' : 'normal'
-                  }}
-                >
-                  {i + 1}
-                </button>
-              ))}
-              <button
-                onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
-                disabled={currentPage === totalPages}
-                style={{ marginLeft: '10px' }}
-              >
-                Следующая
-              </button>
-            </div>
-          )}
-        </div>
+        )}
       </main>
+      <Footer/>
     </>
   );
 }

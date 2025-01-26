@@ -1,0 +1,46 @@
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    padding: 10px 20px;
+    height: 40px;
+    border: 1px solid var(--nav-background);
+    border-radius: 10px;
+    background-color: var(--background-color);
+    color: var(--nav-background);
+    cursor: pointer;
+}
+
+.filter-select option {
+    background-color: var(--nav-background);
+    color: var(--background-color);
+}
+
+.category-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    padding: 10px;
+    height: 40px;
+    background-color: var(--background-color);;
+    border: 1px solid var(--nav-background);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.category-button:hover {
+    background-color: #a9881c;
+    color: var(--background-color);
+    transition: .2s ease;
+}
+
+.category-button.selected {
+    background-color: #D4AF37;
+    color: var(--background-color);
+}

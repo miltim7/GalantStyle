@@ -11,7 +11,7 @@ export default function Footer() {
                     <a href="/clothes">Магазин</a>
                     <a href="/contacts">Контакты</a>
                 </div>
-                <div className="separator"></div>
+                {/* <div className="separator"></div> */}
                 <div className="footer-contact-social">
                     <div className="footer-contact">
                         <a href="tel:+994505529210"><FaPhone /> +994 50 552 92 10</a>

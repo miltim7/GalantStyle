@@ -12,10 +12,14 @@ import About from '@components/About';
 export default function Home() {
   return (
     <>
-      <Head><link rel="icon" href="../assets/favicon.png" type="image/png" />
+      <Head>
+        <link rel="icon" href="../assets/favicon.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       </Head>
       <UtilityBar/>
-      <Header />
+      <Header isTransparent={true}/>
       <main>
         <Hero />
         <About/>

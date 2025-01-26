@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import { notFound } from 'next/navigation';
 import '../../../styles/products.css';
 import Header from '../../components/Header';
+import Footer from '@components/Footer';
+import UtilityBar from '@components/UtilityBar';
 
 export default async function ProductDetailPage({ params }) {
   const { itemType, id } = params;
@@ -17,6 +19,7 @@ export default async function ProductDetailPage({ params }) {
   }
   return (
     <>
+    <UtilityBar/>
       <Header />
       <main style={{ marginTop: '100px' }}>
         <div style={{ marginLeft: '50px', marginRight: '50px' }}>
@@ -40,6 +43,7 @@ export default async function ProductDetailPage({ params }) {
           <button style={{ marginTop: '20px' }}>Купить</button>
         </div>
       </main>
+      <Footer/>
     </>
   );
 }

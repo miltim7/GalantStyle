@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { FaShippingFast, FaThumbsUp, FaDollarSign, FaHeadset } from 'react-icons/fa';
-import '@styles/landing/Advantages.css';
+import '@styles/advantages.css';
 
 export default function Advantages() {
   const { ref, inView } = useInView({ triggerOnce: true });
