@@ -1,526 +1,58 @@
 [
-    {
+  {
       "id": 1,
-      "name": "Чехол для телефона 1",
+      "name": "Унисекс чехол для телефона",
       "price": "100 $",
       "description": "Прозрачный силиконовый чехол.",
       "type": "Чехлы для телефонов",
+      "gender": "унисекс",
       "details": {
-        "fullDescription": "Гибкий, защищает углы, почти не заметен на смартфоне.",
-        "colors": ["Прозрачный"],
-        "material": "Силикон",
-        "images": ["/assets/accessories/product1.webp"]
+          "fullDescription": "Гибкий, защищает углы, почти не заметен на смартфоне.",
+          "colors": ["Прозрачный"],
+          "material": "Силикон",
+          "images": ["/assets/accessories/product1.webp"]
       }
-    },
-    {
+  },
+  {
       "id": 2,
-      "name": "Чехол для телефона 2",
-      "price": "120 $",
-      "description": "Твердый чехол с матовым покрытием.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Не скользит в руке, устойчив к царапинам.",
-        "colors": ["Черный", "Красный"],
-        "material": "Пластик",
-        "images": ["/assets/accessories/product1.webp", "/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 3,
-      "name": "Чехол для телефона 3",
-      "price": "140 $",
-      "description": "Чехол-книжка с кармашками.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Защищает и экран, можно хранить пару банковских карт.",
-        "colors": ["Коричневый", "Чёрный"],
-        "material": "Искусственная кожа",
-        "images": ["/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 4,
-      "name": "Чехол для телефона 4",
-      "price": "150 $",
-      "description": "Глянцевый чехол с узором.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Яркий орнамент, выделяется среди прочих.",
-        "colors": ["Синий", "Желтый"],
-        "material": "Пластик",
-        "images": ["/assets/accessories/product1.webp", "/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 5,
-      "name": "Чехол для телефона 5",
-      "price": "160 $",
-      "description": "Усиленный чехол с защитой от ударов.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Подходит для экстремальных условий, углы усилены резиной.",
-        "colors": ["Черный", "Серый"],
-        "material": "Полиуретан",
-        "images": ["/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 6,
-      "name": "Чехол для телефона 6",
-      "price": "180 $",
-      "description": "Чехол с цветочным принтом.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Нежный рисунок, добавляет устройству индивидуальности.",
-        "colors": ["Белый", "Розовый"],
-        "material": "Пластик",
-        "images": ["/assets/accessories/product1.webp", "/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 7,
-      "name": "Чехол для телефона 7",
-      "price": "200 $",
-      "description": "Противоударный чехол с алюминиевой рамкой.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Жесткая рамка из алюминия, защищает от падений.",
-        "colors": ["Серебристый", "Чёрный"],
-        "material": "Алюминий, Пластик",
-        "images": ["/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 8,
-      "name": "Чехол для телефона 8",
-      "price": "220 $",
-      "description": "Кожаный чехол премиум-класса.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Из натуральной кожи, солидный внешний вид.",
-        "colors": ["Коричневый"],
-        "material": "Кожа",
-        "images": ["/assets/accessories/product1.webp", "/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 9,
-      "name": "Чехол для телефона 9",
-      "price": "240 $",
-      "description": "Ультратонкий чехол.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Почти не увеличивает габариты смартфона.",
-        "colors": ["Белый", "Черный"],
-        "material": "Поликарбонат",
-        "images": ["/assets/accessories/product1.webp"]
-      }
-    },
-    {
-      "id": 10,
-      "name": "Чехол для телефона 10",
-      "price": "260 $",
-      "description": "Чехол с держателем-кольцом.",
-      "type": "Чехлы для телефонов",
-      "details": {
-        "fullDescription": "Удобно держать в руке, кольцо служит подставкой.",
-        "colors": ["Розовый", "Серый"],
-        "material": "Пластик, Металл",
-        "images": ["/assets/accessories/product1.webp", "/assets/accessories/product1.webp"]
-      }
-    },
-  
-    {
-      "id": 11,
-      "name": "Кепка 1",
+      "name": "Женская кепка",
       "price": "300 $",
       "description": "Бейсболка с вышитым логотипом.",
       "type": "Кепки",
+      "gender": "женский",
       "details": {
-        "fullDescription": "Удобная застёжка, универсальный размер.",
-        "colors": ["Синий", "Белый"],
-        "material": "Хлопок 60%, Полиэстер 40%",
-        "images": ["/assets/accessories/product2.webp"]
+          "fullDescription": "Удобная застёжка, универсальный размер.",
+          "colors": ["Синий", "Белый"],
+          "material": "Хлопок 60%, Полиэстер 40%",
+          "images": ["/assets/accessories/product2.webp"]
       }
-    },
-    {
-      "id": 12,
-      "name": "Кепка 2",
-      "price": "350 $",
-      "description": "Сеть сзади для вентиляции.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Отличный вариант для жаркой погоды.",
-        "colors": ["Чёрный", "Серый"],
-        "material": "Полиэстер",
-        "images": ["/assets/accessories/product2.webp", "/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 13,
-      "name": "Кепка 3",
-      "price": "400 $",
-      "description": "Кепка с загнутым козырьком.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Хорошо защищает глаза от солнца.",
-        "colors": ["Белый", "Жёлтый"],
-        "material": "Хлопок 100%",
-        "images": ["/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 14,
-      "name": "Кепка 4",
-      "price": "450 $",
-      "description": "Плоский козырёк, молодёжный стиль.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Для стиля хип-хоп, свободная посадка.",
-        "colors": ["Чёрный"],
-        "material": "Хлопок 80%, Полиэстер 20%",
-        "images": ["/assets/accessories/product2.webp", "/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 15,
-      "name": "Кепка 5",
-      "price": "500 $",
-      "description": "Яркий принт, полностью закрывает голову.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Выразительный узор, подойдет для смелых образов.",
-        "colors": ["Красный", "Белый"],
-        "material": "Хлопок 100%",
-        "images": ["/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 16,
-      "name": "Кепка 6",
-      "price": "550 $",
-      "description": "Утеплённая кепка на флисовой подкладке.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Для прохладной погоды, сохраняет тепло.",
-        "colors": ["Серый"],
-        "material": "Флис, Хлопок",
-        "images": ["/assets/accessories/product2.webp", "/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 17,
-      "name": "Кепка 7",
-      "price": "600 $",
-      "description": "Кепка с контрастной окантовкой.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Яркая окантовка по краю козырька, выделяется.",
-        "colors": ["Белый", "Синий"],
-        "material": "Хлопок 60%, Полиэстер 40%",
-        "images": ["/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 18,
-      "name": "Кепка 8",
-      "price": "650 $",
-      "description": "Кепка с надписью и небольшим козырьком.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Стильная надпись сбоку, универсальный размер.",
-        "colors": ["Чёрный"],
-        "material": "Хлопок 100%",
-        "images": ["/assets/accessories/product2.webp", "/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 19,
-      "name": "Кепка 9",
-      "price": "700 $",
-      "description": "Кепка в военном стиле.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Зелёная расцветка, плотная ткань.",
-        "colors": ["Хаки"],
-        "material": "Хлопок 100%",
-        "images": ["/assets/accessories/product2.webp"]
-      }
-    },
-    {
-      "id": 20,
-      "name": "Кепка 10",
-      "price": "750 $",
-      "description": "Двухцветная кепка с сеткой.",
-      "type": "Кепки",
-      "details": {
-        "fullDescription": "Фронтальная часть яркая, задняя сетка для вентиляции.",
-        "colors": ["Красный", "Белый"],
-        "material": "Хлопок 50%, Полиэстер 50%",
-        "images": ["/assets/accessories/product2.webp"]
-      }
-    },
-  
-    {
-      "id": 21,
-      "name": "Барсетка 1",
+  },
+  {
+      "id": 3,
+      "name": "Мужская барсетка",
       "price": "2000 $",
       "description": "Классическая кожаная барсетка.",
       "type": "Барсетки",
+      "gender": "мужской",
       "details": {
-        "fullDescription": "Компактная и удобная, застёжка-молния, несколько отделений.",
-        "colors": ["Чёрный"],
-        "material": "Кожа 100%",
-        "images": ["/assets/accessories/product3.webp"]
+          "fullDescription": "Компактная и удобная, застёжка-молния, несколько отделений.",
+          "colors": ["Чёрный"],
+          "material": "Кожа 100%",
+          "images": ["/assets/accessories/product3.webp"]
       }
-    },
-    {
-      "id": 22,
-      "name": "Барсетка 2",
-      "price": "2200 $",
-      "description": "Барсетка с ремешком на запястье.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Удобно носить в руке, ремешок регулируется.",
-        "colors": ["Коричневый", "Чёрный"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product3.webp", "/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 23,
-      "name": "Барсетка 3",
-      "price": "2400 $",
-      "description": "Текстильная барсетка на молнии.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Прочная ткань, много карманов, удобна в путешествиях.",
-        "colors": ["Серый", "Тёмно-синий"],
-        "material": "Полиэстер",
-        "images": ["/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 24,
-      "name": "Барсетка 4",
-      "price": "2600 $",
-      "description": "Барсетка-сумка через плечо.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Регулируемый плечевой ремень, вместительные отделения.",
-        "colors": ["Чёрный", "Серый"],
-        "material": "Текстиль, Кожа",
-        "images": ["/assets/accessories/product3.webp", "/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 25,
-      "name": "Барсетка 5",
-      "price": "2800 $",
-      "description": "Барсетка из эко-кожи.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Экологичный материал, при этом износостойкий.",
-        "colors": ["Коричневый"],
-        "material": "Эко-кожа",
-        "images": ["/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 26,
-      "name": "Барсетка 6",
-      "price": "3000 $",
-      "description": "Раскладная барсетка-органайзер.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Несколько секций для документов, карт и телефона.",
-        "colors": ["Чёрный", "Серебристый"],
-        "material": "Кожа, Ткань",
-        "images": ["/assets/accessories/product3.webp", "/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 27,
-      "name": "Барсетка 7",
-      "price": "3200 $",
-      "description": "Барсетка с замком-кодовым.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Защита от кражи, кодовый замок, надёжная фурнитура.",
-        "colors": ["Черный"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 28,
-      "name": "Барсетка 8",
-      "price": "3500 $",
-      "description": "Минималистичная барсетка без лишних деталей.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Один основной отдел, скрытый карман внутри.",
-        "colors": ["Серый", "Белый"],
-        "material": "Кожа 100%",
-        "images": ["/assets/accessories/product3.webp", "/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 29,
-      "name": "Барсетка 9",
-      "price": "4000 $",
-      "description": "Барсетка на молнии и кнопках.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Дополнительные кнопки защищают от случайного раскрытия.",
-        "colors": ["Чёрный", "Коричневый"],
-        "material": "Кожа",
-        "images": ["/assets/accessories/product3.webp"]
-      }
-    },
-    {
-      "id": 30,
-      "name": "Барсетка 10",
-      "price": "4500 $",
-      "description": "Барсетка-кошелёк большого размера.",
-      "type": "Барсетки",
-      "details": {
-        "fullDescription": "Вмещает купюры, карты, телефон, ключи, закрывается на молнию.",
-        "colors": ["Чёрный"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product3.webp", "/assets/accessories/product3.webp"]
-      }
-    },
-  
-    {
-      "id": 31,
-      "name": "Кошелёк 1",
+  },
+  {
+      "id": 4,
+      "name": "Мужской кошелёк",
       "price": "1000 $",
       "description": "Кожаный кошелёк на кнопке.",
       "type": "Кошельки",
+      "gender": "мужской",
       "details": {
-        "fullDescription": "Отделения для купюр и карт, компактный дизайн.",
-        "colors": ["Чёрный", "Коричневый"],
-        "material": "Кожа",
-        "images": ["/assets/accessories/product4.webp"]
+          "fullDescription": "Отделения для купюр и карт, компактный дизайн.",
+          "colors": ["Чёрный", "Коричневый"],
+          "material": "Кожа",
+          "images": ["/assets/accessories/product4.webp"]
       }
-    },
-    {
-      "id": 32,
-      "name": "Кошелёк 2",
-      "price": "1200 $",
-      "description": "Кошелёк с двойным отделом для монет.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Два кармана для мелочи на молнии, удобно распределять монеты.",
-        "colors": ["Серый", "Чёрный"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product4.webp", "/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 33,
-      "name": "Кошелёк 3",
-      "price": "1400 $",
-      "description": "Вертикальный кошелёк-органайзер.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Вмещает крупные купюры без сгибания, отдельный слот для карт.",
-        "colors": ["Коричневый"],
-        "material": "Эко-кожа",
-        "images": ["/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 34,
-      "name": "Кошелёк 4",
-      "price": "1600 $",
-      "description": "Компактный кошелёк с RFID-защитой.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Защита карт от бесконтактного считывания, несколько отделений.",
-        "colors": ["Чёрный", "Синий"],
-        "material": "Кожа, Ткань",
-        "images": ["/assets/accessories/product4.webp", "/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 35,
-      "name": "Кошелёк 5",
-      "price": "1800 $",
-      "description": "Кошелёк на молнии по периметру.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Надёжная молния, купюры и карты не выпадут.",
-        "colors": ["Белый", "Чёрный"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 36,
-      "name": "Кошелёк 6",
-      "price": "2000 $",
-      "description": "Кошелёк-картхолдер на клапане.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Несколько слотов для карт, отсек для купюр.",
-        "colors": ["Серый"],
-        "material": "Кожа 100%",
-        "images": ["/assets/accessories/product4.webp", "/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 37,
-      "name": "Кошелёк 7",
-      "price": "2200 $",
-      "description": "Раскладной кошелёк с окошком для ID-карты.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Удобно носить водительское удостоверение или пропуск.",
-        "colors": ["Чёрный", "Коричневый"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 38,
-      "name": "Кошелёк 8",
-      "price": "2400 $",
-      "description": "Узкий кошелёк-купюрник.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Помещается в нагрудный карман пиджака, минималистичный дизайн.",
-        "colors": ["Синий", "Серый"],
-        "material": "Экокожа",
-        "images": ["/assets/accessories/product4.webp", "/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 39,
-      "name": "Кошелёк 9",
-      "price": "2600 $",
-      "description": "Кошелёк с отделением для мелочи на кнопке.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Один большой отсек для монет, легко доставать.",
-        "colors": ["Коричневый"],
-        "material": "Кожа 100%",
-        "images": ["/assets/accessories/product4.webp"]
-      }
-    },
-    {
-      "id": 40,
-      "name": "Кошелёк 10",
-      "price": "2800 $",
-      "description": "Кошелёк-портмоне на молнии.",
-      "type": "Кошельки",
-      "details": {
-        "fullDescription": "Вмещает смартфон, ключи, деньги и карты. Отличный вариант для поездок.",
-        "colors": ["Чёрный", "Белый"],
-        "material": "Натуральная кожа",
-        "images": ["/assets/accessories/product4.webp", "/assets/accessories/product4.webp"]
-      }
-    }
-  ]
-  
+  }
+]

@@ -10,9 +10,6 @@ import Footer from '@components/Footer';
 import '@styles/products.css';
 import '@styles/global.css';
 
-const clothesCategories = ["Все", "Футболки", "Брюки", "Обувь", "Джемпер", "Рубашки", "Носки"];
-const accessoriesCategories = ["Все", "Чехлы для телефонов", "Кепки", "Барсетки", "Кошельки"];
-
 export default function ProductsPage() {
   const itemsPerPage = 20;
   const params = useParams();
@@ -21,9 +18,11 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const pageQuery = searchParams.get('page') || '1';
   const catQuery = searchParams.get('cat') || 'Все';
+  const genderQuery = searchParams.get('gender') || 'Все';
   const currentPage = parseInt(pageQuery);
-  const [categories, setCategories] = useState(itemType === "accessories" ? accessoriesCategories : clothesCategories);
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(catQuery);
+  const [selectedGender, setSelectedGender] = useState(genderQuery);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [search, setSearch] = useState('');
@@ -32,16 +31,25 @@ export default function ProductsPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (itemType === "accessories") {
-      setCategories(accessoriesCategories);
-    } else {
-      setCategories(clothesCategories);
+    async function fetchCategories() {
+      const fileName = itemType === "accessories" ? "accessories.json" : "clothes.json";
+      const response = await fetch(`/data/${fileName}`, { cache: 'no-store' });
+      const data = await response.json();
+      const uniqueCategories = ["Все", ...new Set(data.map(item => item.type))];
+      setCategories(uniqueCategories);
+      setProducts(data);
+      setFilteredProducts(data);
     }
+    fetchCategories();
   }, [itemType]);
 
   useEffect(() => {
     setSelectedCategory(catQuery);
-  }, [catQuery, itemType]);
+  }, [catQuery]);
+
+  useEffect(() => {
+    setSelectedGender(genderQuery);
+  }, [genderQuery]);
 
   useEffect(() => {
     const fileName = itemType === "accessories" ? "accessories.json" : "clothes.json";
@@ -66,17 +74,19 @@ export default function ProductsPage() {
       let n = p.name.toLowerCase().replace(/\s/g, '').trim();
       let inSearch = s === '' || n.includes(s);
       let inCategory = selectedCategory === 'Все' || p.type === selectedCategory;
-      return inRange && inSearch && inCategory;
+      let inGender = selectedGender === 'Все' || p.gender === selectedGender;
+      return inRange && inSearch && inCategory && inGender;
     });
     setFilteredProducts(list);
-  }, [search, minPrice, maxPrice, selectedCategory, products]);
+  }, [search, minPrice, maxPrice, selectedCategory, selectedGender, products]);
 
   useEffect(() => {
     const paramsObj = new URLSearchParams();
     paramsObj.set('page', '1');
     paramsObj.set('cat', selectedCategory);
+    paramsObj.set('gender', selectedGender);
     router.replace(`/${itemType}?${paramsObj.toString()}`);
-  }, [itemType, selectedCategory, search, minPrice, maxPrice, router]);
+  }, [itemType, selectedCategory, selectedGender, search, minPrice, maxPrice, router]);
 
   useEffect(() => {
     const items = document.querySelectorAll('.product');
@@ -96,6 +106,7 @@ export default function ProductsPage() {
     const paramsObj = new URLSearchParams();
     paramsObj.set('page', page.toString());
     paramsObj.set('cat', selectedCategory);
+    paramsObj.set('gender', selectedGender);
     router.push(`/${itemType}?${paramsObj.toString()}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -104,6 +115,7 @@ export default function ProductsPage() {
     const paramsObj = new URLSearchParams();
     paramsObj.set('page', '1');
     paramsObj.set('cat', 'Все');
+    paramsObj.set('gender', 'Все');
     router.push(`/${value}?${paramsObj.toString()}`);
   };
 
@@ -111,31 +123,40 @@ export default function ProductsPage() {
     setSelectedCategory(cat);
   };
 
+  const handleGenderChange = (gender) => {
+    setSelectedGender(gender);
+  };
+
   return (
     <>
       <UtilityBar />
       <Header isTransparent={false} />
       <main className="main-container">
-        <Filters
-          itemType={itemType}
-          categories={categories}
-          selectedCategory={selectedCategory}
-          handleCategoryChange={handleCategoryChange}
-          handleItemTypeChange={handleItemTypeChange}
-          setCategories={setCategories}
-        />
-        <Search
-          search={search}
-          setSearch={setSearch}
-          minPrice={minPrice}
-          setMinPrice={setMinPrice}
-          maxPrice={maxPrice}
-          setMaxPrice={setMaxPrice}
-        />
+        <div className='filters-sorting'>
+          <Search
+            search={search}
+            setSearch={setSearch}
+            minPrice={minPrice}
+            setMinPrice={setMinPrice}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+          />
+          <Filters
+            itemType={itemType}
+            categories={categories}
+            selectedCategory={selectedCategory}
+            handleCategoryChange={handleCategoryChange}
+            handleItemTypeChange={handleItemTypeChange}
+            setCategories={setCategories}
+            selectedGender={selectedGender}
+            handleGenderChange={handleGenderChange}
+          />
+        </div>
         <ProductCards
           currentItems={currentItems}
           itemType={itemType}
         />
+
         {totalPages > 1 && (
           <div className="pagination">
             <button className="left-button"
@@ -161,7 +182,7 @@ export default function ProductsPage() {
           </div>
         )}
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
