@@ -2,316 +2,97 @@
   {
       "id": 1,
       "name": "Женская футболка",
-      "price": "500 $",
+      "price": "500",
       "description": "Классическая футболка из хлопка.",
       "type": "Футболки",
       "gender": "женский",
       "details": {
-          "fullDescription": "Лёгкая футболка, удобная для повседневной носки.",
+          "fullDescription": "Лёгкая футболка, удобная для повседневной носки",
           "sizes": ["S", "M", "L"],
           "colors": ["Белый", "Черный"],
+          "washingInstructions": "Машинная стирка",
+          "material": "Хлопок 100%",
+          "images": ["/assets/clothes/product1.webp", "/assets/clothes/product2.webp", "/assets/clothes/product3.webp", "/assets/clothes/product4.webp"]
+      }
+  },
+  {
+      "id": 2,
+      "name": "Мужские брюки",
+      "price": "1200",
+      "description": "Классические брюки для офиса.",
+      "type": "Брюки",
+      "gender": "мужской",
+      "details": {
+          "fullDescription": "Хорошо сидят на талии, прямой крой.",
+          "sizes": ["M", "L", "XL"],
+          "washingInstructions": "Машинная стирка",
+          "colors": ["Черный", "Серый"],
+          "material": "Шерсть 50%, Полиэстер 50%",
+          "images": ["/assets/clothes/product1.webp"]
+      }
+  },
+  {
+      "id": 3,
+      "name": "Мужская обувь",
+      "price": "1800",
+      "description": "Кроссовки для бега с амортизацией.",
+      "type": "Обувь",
+      "gender": "мужской",
+      "details": {
+          "fullDescription": "Лёгкие, воздухопроницаемые, подошва амортизирует удары.",
+          "sizes": ["40", "41", "42"],
+          "washingInstructions": "Машинная стирка",
+          "colors": ["Белый", "Синий"],
+          "material": "Синтетика",
+          "images": ["/assets/clothes/product1.webp"]
+      }
+  },
+  {
+      "id": 4,
+      "name": "Мужской джемпер",
+      "price": "1600",
+      "description": "Классический джемпер из шерсти.",
+      "type": "Джемпер",
+      "gender": "мужской",
+      "details": {
+          "fullDescription": "Тёплый джемпер на прохладную погоду.",
+          "sizes": ["M", "L"],
+          "washingInstructions": "Машинная стирка",
+          "colors": ["Серый"],
+          "material": "Шерсть 80%, Акрил 20%",
+          "images": ["/assets/clothes/product1.webp"]
+      }
+  },
+  {
+      "id": 5,
+      "name": "Мужская Рубашка",
+      "price": "800",
+      "description": "Длинный рукав, классический воротник.",
+      "type": "Рубашки",
+      "gender": "мужской",
+      "details": {
+          "fullDescription": "Подходит для офисного стиля и деловых встреч.",
+          "sizes": ["M", "L", "XL"],
+          "washingInstructions": "Машинная стирка",
+          "colors": ["Белый"],
           "material": "Хлопок 100%",
           "images": ["/assets/clothes/product1.webp"]
       }
   },
   {
-      "id": 2,
-      "name": "Мужские брюки",
-      "price": "1200 $",
-      "description": "Классические брюки для офиса.",
-      "type": "Брюки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Хорошо сидят на талии, прямой крой.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Черный", "Серый"],
-          "material": "Шерсть 50%, Полиэстер 50%",
-          "images": ["/assets/clothes/product2.webp"]
-      }
-  },
-  {
-      "id": 3,
-      "name": "Мужская обувь",
-      "price": "1800 $",
-      "description": "Кроссовки для бега с амортизацией.",
-      "type": "Обувь",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Лёгкие, воздухопроницаемые, подошва амортизирует удары.",
-          "sizes": ["40", "41", "42"],
-          "colors": ["Белый", "Синий"],
-          "material": "Синтетика",
-          "images": ["/assets/clothes/product3.webp"]
-      }
-  },
-  {
-      "id": 4,
-      "name": "Мужской джемпер",
-      "price": "1600 $",
-      "description": "Классический джемпер из шерсти.",
-      "type": "Джемпер",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Тёплый джемпер на прохладную погоду.",
-          "sizes": ["M", "L"],
-          "colors": ["Серый"],
-          "material": "Шерсть 80%, Акрил 20%",
-          "images": ["/assets/clothes/product4.webp"]
-      }
-  },
-  {
-      "id": 5,
-      "name": "Мужская Рубашка",
-      "price": "800 $",
-      "description": "Длинный рукав, классический воротник.",
-      "type": "Рубашки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Подходит для офисного стиля и деловых встреч.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Белый"],
-          "material": "Хлопок 100%",
-          "images": ["/assets/clothes/product5.webp"]
-      }
-  },
-  {
       "id": 6,
       "name": "Унисекс носки",
-      "price": "200 $",
+      "price": "200",
       "description": "Короткие носки из хлопка.",
       "type": "Носки",
       "gender": "унисекс",
       "details": {
           "fullDescription": "Идеальны для кроссовок, набор из трех пар.",
           "sizes": ["40-42", "43-45"],
+          "washingInstructions": "Машинная стирка",
           "colors": ["Белый", "Черный"],
           "material": "Хлопок 70%, Полиэстер 30%",
-          "images": ["/assets/clothes/product6.webp"]
-      }
-  },
-  {
-      "id": 2,
-      "name": "Мужские брюки",
-      "price": "1200 $",
-      "description": "Классические брюки для офиса.",
-      "type": "Брюки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Хорошо сидят на талии, прямой крой.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Черный", "Серый"],
-          "material": "Шерсть 50%, Полиэстер 50%",
-          "images": ["/assets/clothes/product2.webp"]
-      }
-  },
-  {
-      "id": 3,
-      "name": "Мужская обувь",
-      "price": "1800 $",
-      "description": "Кроссовки для бега с амортизацией.",
-      "type": "Обувь",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Лёгкие, воздухопроницаемые, подошва амортизирует удары.",
-          "sizes": ["40", "41", "42"],
-          "colors": ["Белый", "Синий"],
-          "material": "Синтетика",
-          "images": ["/assets/clothes/product3.webp"]
-      }
-  },
-  {
-      "id": 4,
-      "name": "Мужской джемпер",
-      "price": "1600 $",
-      "description": "Классический джемпер из шерсти.",
-      "type": "Джемпер",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Тёплый джемпер на прохладную погоду.",
-          "sizes": ["M", "L"],
-          "colors": ["Серый"],
-          "material": "Шерсть 80%, Акрил 20%",
-          "images": ["/assets/clothes/product4.webp"]
-      }
-  },
-  {
-      "id": 5,
-      "name": "Мужская Рубашка",
-      "price": "800 $",
-      "description": "Длинный рукав, классический воротник.",
-      "type": "Рубашки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Подходит для офисного стиля и деловых встреч.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Белый"],
-          "material": "Хлопок 100%",
-          "images": ["/assets/clothes/product5.webp"]
-      }
-  },
-  {
-      "id": 6,
-      "name": "Унисекс носки",
-      "price": "200 $",
-      "description": "Короткие носки из хлопка.",
-      "type": "Носки",
-      "gender": "унисекс",
-      "details": {
-          "fullDescription": "Идеальны для кроссовок, набор из трех пар.",
-          "sizes": ["40-42", "43-45"],
-          "colors": ["Белый", "Черный"],
-          "material": "Хлопок 70%, Полиэстер 30%",
-          "images": ["/assets/clothes/product6.webp"]
-      }
-  },
-  {
-      "id": 2,
-      "name": "Мужские брюки",
-      "price": "1200 $",
-      "description": "Классические брюки для офиса.",
-      "type": "Брюки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Хорошо сидят на талии, прямой крой.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Черный", "Серый"],
-          "material": "Шерсть 50%, Полиэстер 50%",
-          "images": ["/assets/clothes/product2.webp"]
-      }
-  },
-  {
-      "id": 3,
-      "name": "Мужская обувь",
-      "price": "1800 $",
-      "description": "Кроссовки для бега с амортизацией.",
-      "type": "Обувь",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Лёгкие, воздухопроницаемые, подошва амортизирует удары.",
-          "sizes": ["40", "41", "42"],
-          "colors": ["Белый", "Синий"],
-          "material": "Синтетика",
-          "images": ["/assets/clothes/product3.webp"]
-      }
-  },
-  {
-      "id": 4,
-      "name": "Мужской джемпер",
-      "price": "1600 $",
-      "description": "Классический джемпер из шерсти.",
-      "type": "Джемпер",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Тёплый джемпер на прохладную погоду.",
-          "sizes": ["M", "L"],
-          "colors": ["Серый"],
-          "material": "Шерсть 80%, Акрил 20%",
-          "images": ["/assets/clothes/product4.webp"]
-      }
-  },
-  {
-      "id": 5,
-      "name": "Мужская Рубашка",
-      "price": "800 $",
-      "description": "Длинный рукав, классический воротник.",
-      "type": "Рубашки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Подходит для офисного стиля и деловых встреч.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Белый"],
-          "material": "Хлопок 100%",
-          "images": ["/assets/clothes/product5.webp"]
-      }
-  },
-  {
-      "id": 6,
-      "name": "Унисекс носки",
-      "price": "200 $",
-      "description": "Короткие носки из хлопка.",
-      "type": "Носки",
-      "gender": "унисекс",
-      "details": {
-          "fullDescription": "Идеальны для кроссовок, набор из трех пар.",
-          "sizes": ["40-42", "43-45"],
-          "colors": ["Белый", "Черный"],
-          "material": "Хлопок 70%, Полиэстер 30%",
-          "images": ["/assets/clothes/product6.webp"]
-      }
-  },
-  {
-      "id": 2,
-      "name": "Мужские брюки",
-      "price": "1200 $",
-      "description": "Классические брюки для офиса.",
-      "type": "Брюки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Хорошо сидят на талии, прямой крой.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Черный", "Серый"],
-          "material": "Шерсть 50%, Полиэстер 50%",
-          "images": ["/assets/clothes/product2.webp"]
-      }
-  },
-  {
-      "id": 3,
-      "name": "Мужская обувь",
-      "price": "1800 $",
-      "description": "Кроссовки для бега с амортизацией.",
-      "type": "Обувь",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Лёгкие, воздухопроницаемые, подошва амортизирует удары.",
-          "sizes": ["40", "41", "42"],
-          "colors": ["Белый", "Синий"],
-          "material": "Синтетика",
-          "images": ["/assets/clothes/product3.webp"]
-      }
-  },
-  {
-      "id": 4,
-      "name": "Мужской джемпер",
-      "price": "1600 $",
-      "description": "Классический джемпер из шерсти.",
-      "type": "Джемпер",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Тёплый джемпер на прохладную погоду.",
-          "sizes": ["M", "L"],
-          "colors": ["Серый"],
-          "material": "Шерсть 80%, Акрил 20%",
-          "images": ["/assets/clothes/product4.webp"]
-      }
-  },
-  {
-      "id": 5,
-      "name": "Мужская Рубашка",
-      "price": "800 $",
-      "description": "Длинный рукав, классический воротник.",
-      "type": "Рубашки",
-      "gender": "мужской",
-      "details": {
-          "fullDescription": "Подходит для офисного стиля и деловых встреч.",
-          "sizes": ["M", "L", "XL"],
-          "colors": ["Белый"],
-          "material": "Хлопок 100%",
-          "images": ["/assets/clothes/product5.webp"]
-      }
-  },
-  {
-      "id": 6,
-      "name": "Унисекс носки",
-      "price": "200 $",
-      "description": "Короткие носки из хлопка.",
-      "type": "Носки",
-      "gender": "унисекс",
-      "details": {
-          "fullDescription": "Идеальны для кроссовок, набор из трех пар.",
-          "sizes": ["40-42", "43-45"],
-          "colors": ["Белый", "Черный"],
-          "material": "Хлопок 70%, Полиэстер 30%",
-          "images": ["/assets/clothes/product6.webp"]
+          "images": ["/assets/clothes/product1.webp"]
       }
   }
 ]

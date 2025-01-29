@@ -21,7 +21,6 @@ body {
     margin: 20px 0;
 }
 
-
 .pagination button svg {
     color: var(--background-color);
     width: 10px;
@@ -62,4 +61,17 @@ body {
 
 .pagination button:hover:not(:disabled) {
     background-color: #8f8f8f;
+}
+
+
+@media (max-width: 1024px) {
+    .main-container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 10px;
+    }
 }

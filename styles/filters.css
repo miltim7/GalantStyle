@@ -15,7 +15,7 @@
 
 .filter-select {
     padding: 10px 50px 10px 20px;
-    height: 40px;
+    height: 36px;
     border: 1px solid var(--nav-background);
     border-radius: 10px;
     background-color: var(--background-color);
@@ -24,6 +24,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
+    font-size: 12px;
 }
 
 .filter-select:hover {
@@ -42,26 +44,6 @@
     margin-bottom: 20px;
 }
 
-.category-button {
-    padding: 10px;
-    height: 40px;
-    background-color: var(--background-color);
-    border: 1px solid var(--nav-background);
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-.category-button:hover {
-    background-color: #a9881c;
-    color: var(--background-color);
-    transition: .2s ease;
-}
-
-.category-button.selected {
-    background-color: #D4AF37;
-    color: var(--background-color);
-}
-
 .for-select {
     width: 10px;
     margin-left: -40px;
@@ -75,39 +57,22 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     background-color: var(--nav-background);
-    border: 1px solid;
+    border: 1px solid #ffffff67;
     border-radius: 15px;
-    padding: 10px 40px 10px 20px;
-    width: 100%;
+    padding: 8px 40px 8px 20px;
 }
 
-.select-namer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.select-namer span {
+    font-size: 12px;
 }
 
 .select-arrow-icons {
     display: flex;
     flex-direction: row;
     width: 100%;
-}
-
-@media (max-width: 768px) {
-    .filter-select {
-        font-size: 14px;
-    }
-
-    .select-namer span {
-        font-size: 14px;
-    }
-
-    .filter-select option {
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 500px) {
@@ -120,12 +85,12 @@
         justify-content: center;
     }
 
-    .filter-select {
-        padding: 0px 40px 0px 20px;
-    }
-
     .for-select {
         margin-left: -20px;
         margin-right: 15px;
+    }
+
+    .filter-select {
+        margin-left: 5px;
     }
 }

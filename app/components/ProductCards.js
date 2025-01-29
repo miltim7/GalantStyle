@@ -15,12 +15,14 @@ export default function ProductCards({ currentItems, itemType }) {
                 onLoad={e => e.target.classList.add('loaded')}
                 style={{ cursor: 'pointer' }}
               />
-              <h3>{product.name}</h3>
               <div>
-                <span>{product.price}</span>
-                <span className='old-price'>{(product.price.replace('$', '') * 1.2) + ' $'}</span>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <div>
+                  <span>${product.price}</span>
+                  <span className='old-price'>{(product.price.replace('$', '') * 1.2) + ' $'}</span>
+                </div>
               </div>
-              <button>ЗАКАЗАТЬ</button>
             </div>
           </Link>
         ))

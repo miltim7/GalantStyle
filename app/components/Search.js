@@ -8,6 +8,7 @@ export default function Search({ search, setSearch }) {
   const handleClear = () => {
     setSearch('');
   };
+  
 
   return (
     <div className="search-bar">
@@ -21,7 +22,7 @@ export default function Search({ search, setSearch }) {
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
-      {isFocused && search && (
+      {search && (
         <img src="/assets/icons/close.png" className="icon-clear" alt="clear icon" onClick={handleClear} />
       )}
     </div>
