@@ -85,7 +85,7 @@ export default function Header({ isTransparent }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <a href="/contact">Контакты</a>
+              <a href="/contacts">Контакты</a>
             </motion.li>
           </ul>
           <button className={`burger ${menuActive ? "active" : ""}`} onClick={toggleMenu}>
