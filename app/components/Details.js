@@ -126,17 +126,21 @@ export default function Details({ product }) {
             </>
           )}
           <button className="buy-button" onClick={handleWhatsappClick}>
-            Заказать через <img className="whatsapp-icon" src='/assets/icons/whatsapp1.png' alt="whatsapp icon"/>
+            Заказать через <img className="whatsapp-icon" src='/assets/icons/whatsapp1.png' alt="whatsapp icon" />
           </button>
           <button className="buy-button" onClick={handleTelegramClick}>
-            Заказать через <img className="telegram-icon" src='/assets/icons/telegram1.png' alt="telegram icon"/>
+            Заказать через <img className="telegram-icon" src='/assets/icons/telegram1.png' alt="telegram icon" />
           </button>
         </div>
       </div>
       <div className="product-details">
         <p className='product-full-details'>{product.details.fullDescription}</p>
-        <p><b>Материал</b>: {product.details.material}</p>
-        <p><b>Инструкции по стирке</b>: {product.details.washingInstructions}</p>
+        {product.details.material && (
+          <p><b>Материал</b>: {product.details.material}</p>
+        )}
+        {product.details.washingInstructions && (
+          <p><b>Инструкции по стирке</b>: {product.details.washingInstructions}</p>
+        )}
       </div>
     </>
   );

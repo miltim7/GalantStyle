@@ -112,6 +112,22 @@
     }
 }
 
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+    
+    .hero span {
+        font-size: 22px;
+    }
+    
+    .hero .btn {
+        padding: 10px 23px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 650px) {
     .hero {
         background-image: url('/assets/landing/hero4.jpg');

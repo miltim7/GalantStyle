@@ -115,7 +115,7 @@ export default function ProductsPage() {
     const paramsObj = new URLSearchParams();
     paramsObj.set('page', '1');
     paramsObj.set('cat', 'Все');
-    paramsObj.set('gender', 'Все');
+    paramsObj.set('gender', selectedGender); // Сохраняем текущий выбранный пол
     router.push(`/${value}?${paramsObj.toString()}`);
   };
 

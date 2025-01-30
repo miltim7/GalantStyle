@@ -7,11 +7,10 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-links-center">
-                    <a href="#">Главная</a>
+                    <a href="/">Главная</a>
                     <a href="/clothes">Магазин</a>
                     <a href="/contacts">Контакты</a>
                 </div>
-                {/* <div className="separator"></div> */}
                 <div className="footer-contact-social">
                     <div className="footer-contact">
                         <a href="tel:+994505529210"><FaPhone /> +994 50 552 92 10</a>
@@ -22,6 +21,11 @@ export default function Footer() {
                         <a href="https://www.instagram.com/galantstyle.az?igsh=bHdicXE1MW9sMm4y" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                         <a href="https://t.me/miltim7" target="_blank" rel="noopener noreferrer"><FaTelegram /></a>
                     </div>
+                </div>
+                <div className="footer-more-info">
+                    <a href="/delivery">Доставка и оплата</a>
+                    <a href="/quarantee">Гарантия и возврат</a>
+                    <a href="/policy">Политика конфиденциальности</a>
                 </div>
                 <div className="footer-copyright">
                     <p>© 2025, Galant Style</p>
