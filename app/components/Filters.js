@@ -52,27 +52,7 @@ export default function Filters({ itemType, categories, selectedCategory, handle
       onMouseLeave={handleMouseUp}
     >
       <div className="select-namer">
-        <span>Выберите продукцию: </span>
-
-        <div>
-          <select
-            value={itemType}
-            onChange={e => handleItemTypeChange(e.target.value)}
-            className="filter-select"
-          >
-            <option value="clothes">Одежда</option>
-            <option value="accessories">Аксессуары</option>
-          </select>
-          <svg className="custom-arrow for-select" aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-            <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
-          </svg>
-        </div>
-
-      </div>
-
-      <div className="select-namer">
         <span>Выберите пол: </span>
-
         <div>
           <select
             value={selectedGender}
@@ -91,14 +71,28 @@ export default function Filters({ itemType, categories, selectedCategory, handle
       </div>
 
       <div className="select-namer">
-        <span>Выберите категорию: </span>
+        <span>Выберите продукцию: </span>
+        <div>
+          <select
+            value={itemType}
+            onChange={e => handleItemTypeChange(e.target.value)}
+            className="filter-select">
+            <option value="clothes">Одежда</option>
+            <option value="accessories">Аксессуары</option>
+          </select>
+          <svg className="custom-arrow for-select" aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+            <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+          </svg>
+        </div>
+      </div>
 
+      <div className="select-namer">
+        <span>Выберите категорию: </span>
         <div>
           <select
             value={selectedCategory}
             onChange={e => handleCategoryChange(e.target.value)}
-            className="filter-select"
-          >
+            className="filter-select">
             {categories.map(cat => (
               <option key={cat} value={cat}>
                 {cat}

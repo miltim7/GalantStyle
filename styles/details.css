@@ -2,6 +2,11 @@ body {
   background-color: var(--nav-background) !important;
 }
 
+.desktop-thumbnails img {
+  width: 100px;
+  cursor: pointer;
+}
+
 .product-detail-container {
   display: flex;
   gap: 20px;
@@ -17,8 +22,6 @@ body {
   max-width: 1200px;
 }
 
-
-
 .image-gallery {
   flex: 1;
   display: flex;
@@ -29,7 +32,7 @@ body {
 .main-image-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px; /* Уменьшил максимальную ширину */
   display: flex;
   justify-content: center;
 }
@@ -59,8 +62,8 @@ body {
 }
 
 .thumbnail {
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Уменьшил размер миниатюр */
+  height: 80px;
   object-fit: cover;
   cursor: pointer;
   border-radius: 5px;
@@ -71,7 +74,6 @@ body {
 .thumbnail.active {
   opacity: 1;
 }
-
 
 .thumbnail:hover {
   opacity: 1;
@@ -175,6 +177,7 @@ body {
   transition: .3s ease;
 }
 
+
 .buy-button {
   background-color: var(--background-color);
   color: var(--nav-background);
@@ -184,6 +187,10 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+.buy-whatsapp {
+  margin-top: 30px;
 }
 
 .buy-button img {
@@ -253,7 +260,7 @@ body {
   }
 
   .product-details {
-        margin: 0px 30px 30px 30px !important;
+    margin: 0px 30px 30px 30px !important;
   }
 }
 
@@ -268,10 +275,10 @@ body {
     margin: 0 20px;
   }
 
-    .product-details {
-      margin: 0px 20px 30px 20px !important;
-      padding: 0;
-    }
+  .product-details {
+    margin: 0px 20px 30px 20px !important;
+    padding: 0;
+  }
 
   .main-image-container {
     justify-content: center;
@@ -294,11 +301,11 @@ body {
   .image-counter {
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
     right: 10px;
     color: var(--background-color);
-    background-color: #00000031;
-    padding: 5px 10px;
+    background-color: #0000001c;
+    padding: 8px 12px;
     border-radius: 5px;
     font-size: 14px;
     margin-bottom: -20px;
@@ -314,11 +321,11 @@ body {
     cursor: pointer;
     padding: 50% 0;
   }
-  
+
   .prev-button {
     padding-right: 48%;
   }
-  
+
   .next-button {
     padding-left: 48%;
   }
@@ -349,5 +356,117 @@ body {
   .custom-select-container,
   .buy-button {
     width: 72%;
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* Уменьшил максимальную ширину */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.prev-button,
+.next-button {
+  background: none;
+  border: none;
+  color: #a39dcb7d;
+  background-color: #ffffff00;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 50% 0;
+}
+
+.prev-button {
+  padding-right: 48%;
+}
+
+.next-button {
+  padding-left: 48%;
+}
+
+.prev-button:focus,
+.next-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.image-counter {
+  display: block;
+  position: absolute;
+  bottom: 20px; /* Поднял счетчик выше */
+  right: 10px;
+  color: var(--background-color);
+  background-color: #00000015;
+  padding: 8px 12px; /* Увеличил padding для лучшей видимости */
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: -20px;
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 100%;
+  }
+
+  .next-button {
+    margin-left: -20px;
+  }
+
+  .slide {
+    flex: 0 0 90%;
+    margin: 0 5%;
+  }
+
+  .slide-image {
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide-image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .slide-image {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .slide-image {
+    width: 100%;
   }
 }

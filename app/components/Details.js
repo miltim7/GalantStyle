@@ -1,36 +1,58 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '@styles/details.css';
 
 export default function Details({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.details.images[0]);
   const [selectedSize, setSelectedSize] = useState("");
   const [isSelectOpen, setIsSelectOpen] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [translateX, setTranslateX] = useState(0);
+  const sliderRef = useRef(null);
 
-  const handleImageClick = (imgSrc, index) => {
-    setSelectedImage(imgSrc);
-    setImageIndex(index);
+  // Обработчики свайпа
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches ? e.touches[0].clientX : e.clientX);
+    setTranslateX(0);
   };
 
-  const handleSizeChange = (event) => {
-    setSelectedSize(event.target.value);
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+    const diff = currentX - startX;
+    setTranslateX(diff);
   };
 
-  const toggleSelect = () => {
-    setIsSelectOpen(!isSelectOpen);
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const threshold = sliderRef.current.offsetWidth * 0.15;
+    if (Math.abs(translateX) > threshold) {
+      if (translateX > 0) {
+        handlePrev();
+      } else {
+        handleNext();
+      }
+    }
+    setTranslateX(0);
   };
 
-  const handlePrevClick = () => {
-    const prevIndex = (imageIndex - 1 + product.details.images.length) % product.details.images.length;
-    setSelectedImage(product.details.images[prevIndex]);
-    setImageIndex(prevIndex);
+  const handlePrev = () => {
+    setCurrentIndex(prev =>
+      (prev - 1 + product.details.images.length) % product.details.images.length
+    );
+    setSelectedImage(product.details.images[currentIndex]);
   };
 
-  const handleNextClick = () => {
-    const nextIndex = (imageIndex + 1) % product.details.images.length;
-    setSelectedImage(product.details.images[nextIndex]);
-    setImageIndex(nextIndex);
+  const handleNext = () => {
+    setCurrentIndex(prev =>
+      (prev + 1) % product.details.images.length
+    );
+    setSelectedImage(product.details.images[currentIndex]);
   };
 
   const getGenderIcon = (gender) => {
@@ -56,38 +78,89 @@ export default function Details({ product }) {
     window.open(url, '_blank');
   };
 
+  const handleSizeChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
+
+  const toggleSelect = () => {
+    setIsSelectOpen(!isSelectOpen);
+  };
+
+  const handleThumbnailClick = (index) => {
+    setCurrentIndex(index);
+    setSelectedImage(product.details.images[index]);
+  };
+
   return (
     <>
       <div className="product-detail-container">
         <div className="image-gallery">
-          <div className="main-image-container">
-            <img src={selectedImage} alt={`${product.name} main`} className="main-image" />
+
+          {/* <div className="desktop-thumbnails">
+            {product.details.images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index}`}
+                className={`desktop-thumbnail ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => handleThumbnailClick(index)}
+              />
+            ))}
+          </div> */}
+
+          <div
+            className="slider-container"
+            ref={sliderRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleTouchStart}
+            onMouseMove={handleTouchMove}
+            onMouseUp={handleTouchEnd}
+            onMouseLeave={handleTouchEnd}>
+
+            <div
+              className="slider-track"
+              style={{
+                transform: `translateX(calc(-${currentIndex * 100}% + ${translateX}px))`,
+                transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              }}
+            >
+
+              {product.details.images.map((img, index) => (
+                <div
+                  key={index}
+                  className="slide"
+                  style={{ width: `${100 / product.details.images.length}%` }}
+                >
+                  <img
+                    src={img}
+                    alt={`${product.name} slide ${index}`}
+                    className="slide-image"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+
+
+
             {product.details.images.length > 1 && (
               <>
                 <div className="slider-controls">
-                  <button className="prev-button" onClick={handlePrevClick}>❮</button>
-                  <button className="next-button" onClick={handleNextClick}>❯</button>
+                  <button className="prev-button" onClick={handlePrev}>❮</button>
+                  <button className="next-button" onClick={handleNext}>❯</button>
                 </div>
                 <div className="image-counter">
-                  {imageIndex + 1}/{product.details.images.length}
+                  {currentIndex + 1}/{product.details.images.length}
                 </div>
               </>
             )}
           </div>
-          {product.details.images.length > 1 && (
-            <div className="thumbnail-container">
-              {product.details.images.map((imgSrc, index) => (
-                <img
-                  key={index}
-                  src={imgSrc}
-                  alt={`${product.name} thumbnail ${index}`}
-                  className={`thumbnail ${selectedImage === imgSrc ? 'active' : ''}`}
-                  onClick={() => handleImageClick(imgSrc, index)}
-                />
-              ))}
-            </div>
-          )}
         </div>
+
+
+
         <div className="product-info">
           <h2>{product.name}</h2>
           <p className="description">{product.description}</p>
@@ -125,7 +198,7 @@ export default function Details({ product }) {
               </div>
             </>
           )}
-          <button className="buy-button" onClick={handleWhatsappClick}>
+          <button className="buy-button buy-whatsapp" onClick={handleWhatsappClick}>
             Заказать через <img className="whatsapp-icon" src='/assets/icons/whatsapp1.png' alt="whatsapp icon" />
           </button>
           <button className="buy-button" onClick={handleTelegramClick}>
@@ -133,6 +206,7 @@ export default function Details({ product }) {
           </button>
         </div>
       </div>
+
       <div className="product-details">
         <p className='product-full-details'>{product.details.fullDescription}</p>
         {product.details.material && (
