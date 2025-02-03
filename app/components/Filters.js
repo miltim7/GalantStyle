@@ -30,7 +30,7 @@ export default function Filters({ itemType, categories, selectedCategory, handle
     if (filterBar && filterBar.isDragging) {
       event.preventDefault();
       const x = event.pageX - filterBar.offsetLeft;
-      const walk = (x - filterBar.startX) * 1; // Скорость прокрутки
+      const walk = (x - filterBar.startX) * 1;
       filterBar.scrollLeft = filterBar.scrollLeftStart - walk;
     }
   };

@@ -26,22 +26,33 @@ export default function UtilityBar() {
       }, 300);
     }
 
-    rightButton.addEventListener('click', () => {
+    function changeTextAutomatically() {
       if (text.classList.contains('first')) {
-        changeText('galant.style7@gmail.com', 'second', 'right');
+        changeText('БЕСПЛАТНАЯ ДОСТАВКА', 'second', 'right');
       } else {
-        changeText('+994-50-552-92-10', 'first', 'right');
+        changeText('Скидка 20% на ВСЕ товары', 'first', 'right');
+      }
+    }
+
+    setInterval(changeTextAutomatically, 3000);
+
+    rightButton.addEventListener('click', () => {
+        if (text.classList.contains('first')) {
+        changeText('БЕСПЛАТНАЯ ДОСТАВКА', 'second', 'right');
+      } else {
+        changeText('Скидка 20% на ВСЕ товары', 'first', 'right');
       }
     });
 
     leftButton.addEventListener('click', () => {
       if (text.classList.contains('second')) {
-        changeText('+994-50-552-92-10', 'first', 'left');
+        changeText('Скидка 20% на ВСЕ товары', 'first', 'left');
       } else {
-        changeText('galant.style7@gmail.com', 'second', 'left');
+        changeText('БЕСПЛАТНАЯ ДОСТАВКА', 'second', 'left');
       }
     });
-  }, []);
+
+  });
 
   return (
     <section className="utility-bar">
@@ -51,7 +62,7 @@ export default function UtilityBar() {
             <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
           </svg>
         </button>
-        <p className="first">+994-50-552-92-10</p>
+        <p className="first">Скидка 20% на ВСЕ товары</p>
         <button className="right-button" style={{ transform: 'rotate(-90deg)' }}>
           <svg aria-hidden="true" focusable="false" className="icon icon-caret" viewBox="0 0 10 6">
             <path fillRule="evenodd" clipRule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>

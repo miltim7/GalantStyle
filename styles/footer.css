@@ -75,8 +75,16 @@
 
 .footer-social {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
-    align-self: flex-end;
+}
+
+.footer-social div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .footer-social a {

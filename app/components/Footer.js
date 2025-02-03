@@ -17,9 +17,12 @@ export default function Footer() {
                         <a href="mailto:galant.style7@gmail.com"><FaEnvelope /> galant.style7@gmail.com</a>
                     </div>
                     <div className="footer-social">
-                        <a href="https://www.tiktok.com/@galantstyle.az?_t=ZS-8tLLAbHBA7L&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
-                        <a href="https://www.instagram.com/galantstyle.az?igsh=bHdicXE1MW9sMm4y" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                        <a href="https://t.me/miltim7" target="_blank" rel="noopener noreferrer"><FaTelegram /></a>
+                        Подпишитесь на наши соцсети
+                        <div>
+                            <a href="https://www.tiktok.com/@galantstyle.az?_t=ZS-8tLLAbHBA7L&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
+                            <a href="https://www.instagram.com/galantstyle.az?igsh=bHdicXE1MW9sMm4y" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                            <a href="https://t.me/miltim7" target="_blank" rel="noopener noreferrer"><FaTelegram /></a>
+                        </div>
                     </div>
                 </div>
                 <div className="footer-more-info">
