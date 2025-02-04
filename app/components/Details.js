@@ -164,7 +164,7 @@ export default function Details({ product }) {
         <div className="product-info">
           <h2>{product.name}</h2>
           <p className="description">{product.description}</p>
-          <h4>${product.price}</h4>
+          <h4>{product.price} <img src='/assets/icons/manat.png'/></h4>
           <p className='for-whom-details'>
             <img src={getGenderIcon(product.gender)} alt={product.gender} className="gender-icon" />
             {product.gender === 'женский' ? 'Для НЕЁ' : product.gender === 'мужской' ? 'Для НЕГО' : 'УНИСЕКС'}

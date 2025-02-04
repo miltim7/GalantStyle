@@ -18,9 +18,13 @@ export default function ProductCards({ currentItems, itemType }) {
               <div>
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
-                <div>
-                  <span>${product.price}</span>
-                  <span className='old-price'>{(product.price.replace('$', '') * 1.2) + ' $'}</span>
+                <div className='price-div'>
+
+                  <span className='price-span'>{product.price}<img className='manat' src='/assets/icons/manat.png' alt='manat' /></span>
+                  <span className='old-price'>
+                    {(product.price * 1.2)}
+                    <img className='manat' src='/assets/icons/manat.png' alt='manat' />
+                  </span>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@ export default function Advantages() {
 
   return (
     <section className="advantages" ref={ref}>
-      <h2 className="title">Почему нужно заказывать у</h2>
+      <h2 className="title">Почему выбирают нас?</h2>
       <img src="../assets/logos/4.png" alt="Logo" className="logo" />
       
       <div className="advantages-list">
@@ -25,19 +25,19 @@ export default function Advantages() {
           <>
             <motion.div className="advantage" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
               <FaDollarSign className="icon" />
-              <span className="text">Выгодные цены</span>
+              <span className="text">Только оригинал</span>
             </motion.div>
             <motion.div className="advantage" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
               <FaThumbsUp className="icon" />
-              <span className="text">Гарантия качества материала</span>
+              <span className="text">Легкость покупки</span>
             </motion.div>
             <motion.div className="advantage" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
               <FaShippingFast className="icon" />
-              <span className="text">Быстрая доставка, по всему Баку</span>
+              <span className="text">Бесплатная доставка по Баку</span>
             </motion.div>
             <motion.div className="advantage" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
               <FaHeadset className="icon" />
-              <span className="text">Круглосуточная поддержка</span>
+              <span className="text">Индивидуальный подход</span>
             </motion.div>
           </>
         )}
